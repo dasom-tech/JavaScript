@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>var, let, const</title>
+<script>
+    // var : 변수 사용범위 function 레벨
+    // let, const : 변수 사용범위 { } 기준
+    // const : 상수화된 변수(자바에서 final 선언된 변수와 유사)
+    // -------------------------------------------
+    
+    //var 변수 : var 선언 없이 사용 가능하고, 선언문 전에서도 사용 가능
+    //          중복 선언도 가능
+    document.write("변수 선언전 작성된 varNum : " + varNum, "<br>"); //undefined
+    
+    var varNum = 100;
+    var varNum = 500; //변수 중복 선언(의도적으로 사용하지 말 것)
+    document.write("변수 선언전 작성된 varNum : " + varNum, "<br>"); 
+    document.write("<hr>");
+    
+    //===================================================
+    // let, const : 변수 선언문 이후에만 사용 가능, 중복 선언 안 됨
+    // 오류 :Cannot access 'letNum' before initialization
+    //document.write("변수 선언 후 letNum : " + letNum, "<br>"); //변수 선언 전 사용 불가
+    let letNum = 100;
+    //let letNum = 500; //Identifier 'letNum' has already been declared
+    document.write("변수 선언 후 letNum : " + letNum, "<br>");
+    document.write("<hr>");
+    
+    const CONST_VAR = "const 변수는 처음 한 번만 값 설정 가능";
+    document.write("const CONST_VAR : " + CONST_VAR);
+    
+    //Assignment to constant variable. 
+    //CONST_VAR = "const 변수에 값 재설정"; //const 값 재설정 허용 안 함.
+    document.write("==============================JS 끝")
+    
+</script>
+</head>
+<body>
+</body>
+
+</html>

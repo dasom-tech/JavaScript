@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>function 변수사용범위</title>
+<script>
+    //var 선언 변수의 사용 범위는 함수를 기준으로 한다.
+    var globalVar = "전역변수 globalVar";
+    document.write("globalVar : " + globalVar, "<br>");
+    
+    function displayMsg(param) {
+        document.write("function 내부사용 globalVar : " + globalVar, "<br>");
+        var localVar = "localVar - function 내에서만 사용되는 지역변수";
+        document.write("function 내부사용 localVar : " + localVar, "<br>");
+        
+        //함수 내에서 var 키워드 없이 선언하면 전역변수 처리됨.
+        //(권장) 명시적으로 var사용(전역변수 function 외부에 선언 사용)
+        localNoVar = "function 내부에서 var 없이 선언 사용 - 전역변수";
+    }
+    displayMsg();
+    //ReferenceError: localVar is not defined
+    //document.write("function 외부사용 localVar : " + localVar, "<br>");
+    document.write("function 외부사용 localNoVar : " + localNoVar, "<br>");
+    document.write("===============================", "<br>");
+</script>
+</head>
+<body>
+</body>
+
+</html>
